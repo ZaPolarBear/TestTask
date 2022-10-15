@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <data>
+        <variable
+            name="foodModel"
+            type="com.zpb.testtask.models.FoodDisplayModel" />
+    </data>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <View
         android:id="@+id/food_image"
         android:layout_width="135dp"
@@ -47,5 +55,5 @@
         android:textAppearance="@style/price"
         android:gravity="top"
         />
-
 </RelativeLayout>
+</layout>

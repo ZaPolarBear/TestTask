@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <View
+    <data>
+        <variable
+            name="bannerModel"
+            type="com.zpb.testtask.models.BannerModel" />
+    </data>
+
+
+    <ImageView
         android:id="@+id/banner"
         android:layout_width="300dp"
         android:layout_height="112dp"
@@ -15,4 +22,4 @@
         android:elevation="10dp"
         />
 
-</RelativeLayout>
+</layout>

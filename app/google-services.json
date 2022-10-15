@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "336426275843",
+    "firebase_url": "https://tetstask-3e9bc-default-rtdb.firebaseio.com",
+    "project_id": "tetstask-3e9bc",
+    "storage_bucket": "tetstask-3e9bc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336426275843:android:136537893be339761fea36",
+        "android_client_info": {
+          "package_name": "com.zpb.testtask"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "336426275843-nm5m7c9jm5462kg4ldnmruit1r8pjeko.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmJFzhxU3g70G3i_635KupXhNrSfWB744"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "336426275843-nm5m7c9jm5462kg4ldnmruit1r8pjeko.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
