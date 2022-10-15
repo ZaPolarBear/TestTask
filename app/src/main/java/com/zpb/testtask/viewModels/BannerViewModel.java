@@ -29,7 +29,7 @@ public class BannerViewModel extends ViewModel {
     public LiveData<List<BannerModel>> GetBanner(){
 
         if(bannerDisplayModel == null){
-            bannerDisplayModel = bannerRepo.requestFood();
+            bannerDisplayModel = bannerRepo.requestBanner();
         }
 
         return  bannerDisplayModel;

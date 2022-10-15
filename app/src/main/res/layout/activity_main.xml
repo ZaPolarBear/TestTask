@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/text"
@@ -9,43 +14,110 @@
         android:layout_height="20dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="42dp"
-        android:text="Москва"
-        android:textAppearance="@style/food_name"
         android:gravity="top"
+        android:text="Москва"
+        android:textAppearance="@style/food_name" />
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/tabbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
         />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/food_tab"
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/qr"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"/>
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/corsine"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="20dp"/>
+    <TextView
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="50dp"
+        android:layout_width="80dp"
+        android:layout_height="20dp"
+        android:gravity="center"
+        android:text="Корзина"
+        android:textAppearance="@style/food_name" />
+
+    <ImageView
+        android:id="@+id/menu"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/menu"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginBottom="20dp"/>
+    <TextView
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="60dp"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:gravity="center"
+        android:text="Меню"
+        android:textAppearance="@style/food_name" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/search_tab"
-        android:layout_marginTop="24dp" />
-
-    <com.google.android.material.appbar.CollapsingToolbarLayout
-        android:id="@+id/banner"
-        android:layout_width="match_parent"
-        android:layout_height="112dp"
+        android:layout_above="@+id/tabbar"
         android:layout_below="@+id/text"
-        android:layout_marginTop="26dp"
-        android:fitsSystemWindows="true">
-        <HorizontalScrollView
+        android:layout_marginTop="8dp"
+        tools:context=".MainActivity">
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/banners"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:theme="@style/Theme.AppCompat.Light">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapse"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/banner_tab"
+                    android:layout_width="match_parent"
+                    android:layout_height="112dp" />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/banner_tab"
+                android:id="@+id/search_tab"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="32dp"
+                android:layout_below="@+id/collapse" />
 
-        </HorizontalScrollView>
 
-    </com.google.android.material.appbar.CollapsingToolbarLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/food_tab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/search_tab"
+                android:layout_marginTop="16dp" />
+        </com.google.android.material.appbar.AppBarLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    <HorizontalScrollView
-        android:id="@+id/search_tab"
-        android:layout_width="match_parent"
-        android:layout_height="32dp"
-        android:layout_below="@+id/banner"
-        android:layout_marginTop="16dp" />
 
 </RelativeLayout>

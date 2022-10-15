@@ -15,11 +15,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.zpb.testtask.R;
 import com.zpb.testtask.models.FoodDisplayModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder> {
 
-    DatabaseReference reference;
     List<FoodDisplayModel> foodList;
 
     @NonNull
@@ -27,7 +27,6 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
     public FoodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.food_display_item, parent, false);
-
         return new FoodViewHolder(view);
     }
 
@@ -38,11 +37,9 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
         holder.foodDescription.setText(foodModel.getDescription());
         holder.foodName.setText(foodModel.getName());
         holder.foodPrice.setText(foodModel.getPrice());
-
-        Log.d("ADAPTER", "foodModel.getDescription()");
     }
 
-    public FoodAdapter(List<FoodDisplayModel> foodList) {
+    public FoodAdapter(final List<FoodDisplayModel> foodList) {
         this.foodList = foodList;
     }
 
@@ -52,11 +49,13 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
     }
 
     public void addToList(List<FoodDisplayModel> foodDisplayModelList) {
-        foodList.addAll(foodDisplayModelList);
+        this.foodList.clear();
+        this.foodList = foodDisplayModelList;
+        notifyDataSetChanged();
 
     }
 
-    public class FoodViewHolder extends RecyclerView.ViewHolder {
+    public static class FoodViewHolder extends RecyclerView.ViewHolder {
         public ImageView foodImage;
         public TextView foodDescription, foodName, foodPrice;
 

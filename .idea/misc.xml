@@ -5,13 +5,15 @@
       <map>
         <entry key="..\:/AndroidProjects/Testtask/app/src/main/res/drawable/banner.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/Testtask/app/src/main/res/drawable/pricce.xml" value="0.2115" />
+        <entry key="..\:/AndroidProjects/Testtask/app/src/main/res/drawable/price.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/Testtask/app/src/main/res/drawable/search_item.xml" value="0.2115" />
         <entry key="..\:/AndroidProjects/Testtask/app/src/main/res/drawable/search_itim_default.xml" value="0.2115" />
-        <entry key="..\:/AndroidProjects/Testtask/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/AndroidProjects/Testtask/app/src/main/res/layout/activity_main.xml" value="0.152" />
         <entry key="..\:/AndroidProjects/Testtask/app/src/main/res/layout/banner_item.xml" value="0.2" />
         <entry key="..\:/AndroidProjects/Testtask/app/src/main/res/layout/food_display_item.xml" value="0.2" />
         <entry key="..\:/AndroidProjects/Testtask/app/src/main/res/layout/main_fragment.xml" value="0.29453125" />
         <entry key="..\:/AndroidProjects/Testtask/app/src/main/res/layout/search_item.xml" value="0.22826086956521738" />
+        <entry key="..\:/AndroidProjects/Testtask/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
       </map>
     </option>
   </component>

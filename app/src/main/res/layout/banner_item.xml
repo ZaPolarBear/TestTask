@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <data>
-        <variable
-            name="bannerModel"
-            type="com.zpb.testtask.models.BannerModel" />
-    </data>
-
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="112dp">
 
     <ImageView
         android:id="@+id/banner"
@@ -17,9 +10,8 @@
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="16dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="72dp"
-        android:background="@drawable/banner"
+        android:src="@drawable/banner"
         android:elevation="10dp"
         />
 
-</layout>
+</RelativeLayout>

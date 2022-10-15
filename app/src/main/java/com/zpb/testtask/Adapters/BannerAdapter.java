@@ -17,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
+import com.zpb.testtask.CONST;
 import com.zpb.testtask.R;
 import com.zpb.testtask.models.BannerModel;
 import com.zpb.testtask.models.FoodDisplayModel;
@@ -25,50 +26,46 @@ import java.util.List;
 
 public class BannerAdapter extends RecyclerView.Adapter<BannerAdapter.BannerViewHolder> {
 
-    DatabaseReference reference;
-    List<BannerModel> bannerList;
+    List<BannerModel> bannerModelList;
 
     @NonNull
     @Override
-    public BannerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public BannerAdapter.BannerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.food_display_item, parent, false);
-        Log.d("ADAPTER", "foodModel.getDescription()");
-
-        return new BannerViewHolder(view);
+                .inflate(R.layout.banner_item, parent, false);
+        return new BannerAdapter.BannerViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BannerViewHolder holder, int position) {
-        BannerModel bannerModel = bannerList.get(position);
-
-        Picasso.get().load(bannerModel.getImageUrl()).into(holder.bannerImage);
-
-
-        Log.d("ADAPTER", bannerModel.getImageUrl());
+    public void onBindViewHolder(@NonNull BannerAdapter.BannerViewHolder holder, int position) {
+        BannerModel bannerModel = bannerModelList.get(position);
+        holder.banner.setVisibility(View.VISIBLE);
     }
 
-    public BannerAdapter(List<BannerModel> bannerList) {
-        this.bannerList = bannerList;
+    public BannerAdapter(final List<BannerModel> bannerModelList) {
+        this.bannerModelList = bannerModelList;
     }
 
     @Override
     public int getItemCount() {
-        return bannerList.size();
+        return bannerModelList.size();
     }
 
-    public void addToList(List<BannerModel> bannerList) {
-        bannerList.addAll(bannerList);
+    public void addToList(List<BannerModel> bannerModelList) {
+        this.bannerModelList.clear();
+        this.bannerModelList = bannerModelList;
+        notifyDataSetChanged();
 
     }
 
-    public class BannerViewHolder extends RecyclerView.ViewHolder {
-        public ImageView bannerImage;
+    public static class BannerViewHolder extends RecyclerView.ViewHolder {
+        public ImageView banner;
 
 
         public BannerViewHolder(@NonNull View itemView) {
             super(itemView);
-            bannerImage = itemView.findViewById(R.id.banner);
+
+            banner = itemView.findViewById(R.id.banner);
         }
     }
 }

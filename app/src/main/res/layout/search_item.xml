@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="100dp"
+    android:layout_height="40dp">
 
-    <data>
-        <variable
-            name="bannerModel"
-            type="com.zpb.testtask.models.BannerModel" />
-    </data>
+
 
 
     <View
@@ -15,7 +11,7 @@
         android:layout_width="88dp"
         android:layout_height="32dp"
         android:layout_marginLeft="16dp"
-        android:background="@drawable/search_item_default"
+        android:background="@drawable/search_active_item"
        />
 
     <TextView
@@ -23,8 +19,8 @@
         android:layout_width="88dp"
         android:layout_height="32dp"
         android:layout_marginLeft="16dp"
-        android:gravity="top"
+        android:gravity="center"
         android:textAppearance="@style/search_style"
         />
 
-</layout>
+</RelativeLayout>
